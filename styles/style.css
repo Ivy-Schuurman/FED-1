@@ -1,0 +1,1009 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+	--color-text-1:#FFFFFF;
+	--color-text-2: #000000;
+	--color-text-3: #686868; 
+	--color-background-1: #181818;
+	--color-background-2: #FFFFFF;
+}
+
+
+
+
+
+/****************/
+/* JOUW STYLING */
+/****************/
+
+/* OVERALL */
+/***********/
+
+* {
+	margin: 0;
+}
+
+body {
+	background-color: #181818;
+	color: #FFFFFF;
+}
+
+
+a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+ul {
+	padding: 0;
+}
+
+nav ul li {
+	list-style-type: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+video {
+	width: 100%;
+	height: 100vh;
+	object-fit: cover;
+}
+
+/*TYPOGRAFIE*/
+/***********/
+
+html {
+	font-family: "Saira", serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+
+h1, h2, h3 {
+	font-weight: 600;
+	font-variation-settings:
+	  "wdth" 50;
+}
+
+/* HEADER */
+/**********/
+
+header {
+	background-color: var(--color-background-1);
+	position: sticky;
+	top: 0;
+	height: 2.5em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: .5em;
+	z-index: 1;
+}
+
+header nav {
+	order: 0;
+}
+
+header nav ul {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	bottom: 0;
+	translate: -100% 0%;
+	transition: translate 0.3s ease-in-out;
+	background-color: var(--color-background-1);
+	color: var(--color-text-1);
+	padding: 2em;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav.showMenu ul {
+	translate: 0% 0%;
+}
+
+header nav button {
+	display: flex;
+	align-items: center;
+	gap: .5em;
+	background-color: var(--color-background-1);
+	color: var(--color-text-1);
+	border: none;
+	position: relative; 
+	z-index: 2;
+}
+
+header a {
+	order: 2;
+	color: var(--color-text-1);
+}
+
+h1 {
+	order: 1;
+}
+
+/*LIGHT/DARK MODE*/
+/*****************/
+/*deel hiervan met behulp van mede student Pien (vooral het toepassen van de light mode*/
+@media (prefers-color-scheme:dark) {
+	:root {
+		--color-text-1:#FFFFFF;
+		--color-text-2: #000000;
+		--color-background-1: #181818;
+		--color-background-2: #FFFFFF;
+	}
+}
+
+.light {
+	display: inline-block;
+	position: relative;
+	width: 45px;
+	height: 20px;
+}
+
+.light input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.light span {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--color-background-2);
+	border-radius: 10px;
+	transition: .4s;
+}
+
+.light span:before {
+	position: absolute;
+	content: "";
+	height: 10px;
+	width: 10px;
+	left: 4px;
+	bottom: 5px;
+	background-color: var(--color-background-1);
+	border-radius: 50%;
+	transition: .4s;
+}
+
+header path {
+	fill: var(--color-text-1);
+}
+
+header img {
+	color: var(--color-text-1);
+}
+
+
+footer path {
+	fill: var(--color-text-1);
+}
+
+
+body.light-mode .light span:before {
+	left: 30px;
+}
+
+body.light-mode {
+	--color-text-1:#000000;
+	--color-text-2: #FFFFFF;
+	--color-background-1: #FFFFFF;
+	--color-background-2: #181818;
+}
+
+/* BODY */
+/********/
+
+/*HOME PAGINA*/ 
+
+/*Section 1: Video*/
+.home section:nth-of-type(1) h2 {
+	font-size: 1em;
+}
+
+.home section:nth-of-type(1) p {
+	font-size: 1.6em;
+}
+
+.home section:nth-of-type(1) {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(6, 1fr)
+}
+
+.home section:nth-of-type(1) video {
+	grid-row: 1 / -1;
+	grid-column: 1 / -1;
+	z-index: -1;
+}
+
+.home section:nth-of-type(1) div {
+	grid-row: 5 / -1;
+	grid-column: 2 / -2;
+	text-align: center;
+	flex-wrap: nowrap;
+}
+
+.home section:nth-of-type(1) ul {
+	grid-column: 1 / -1;
+	grid-row: 6;
+	display: flex;
+	justify-content: center;
+	list-style-type: none;
+	margin: 1.5em 0 0 0;
+	gap: 1em;
+}
+
+.home section:nth-of-type(1) button {
+	padding: .5em;
+	border-radius: 30px;
+	border-color: #FFFFFF;
+	background-color: transparent;
+}
+
+/*Section 2: Nep carousel*/
+.home section:nth-of-type(2) {
+	background-color: #FFFFFF;
+}
+
+.home section:nth-of-type(2) img {
+	order: 1;
+}
+
+.home section:nth-of-type(2) h2 {
+	order: 2;
+	align-self: flex-start;
+	color: #000000;
+	font-size: 1.6em;
+	padding: .5em 0 0 0;
+}
+
+.home section:nth-of-type(2) p {
+	order: 3;
+	align-self: flex-start;
+	padding: .5em 0 1.5em 0;
+	color: #000000;
+}
+
+.home section:nth-of-type(2) a {
+	order: 4;
+	align-self: flex-start;
+	color: #000000;
+}
+
+.home section:nth-of-type(2) svg {
+	order: 5;
+}
+
+/*/*Section 2: nep carousel, article*/
+.home section:nth-of-type(2) > article:nth-of-type(1) {
+	display: flex;
+	flex-direction: column;
+	padding: 1.5em 1.5em 4em;
+}
+
+.home section:nth-of-type(2) > article:nth-of-type(1) div {
+	padding: 1.5em;
+	display: flex;
+	align-items: center;
+	gap: 1em;
+}
+
+/*Section 2: tweede article, buttons carousel*/
+.home section:nth-of-type(2) > article:nth-of-type(2) { 
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 1.5em 1.5em 1.5em;
+	background-color: #FFFFFF;
+}
+
+.home section:nth-of-type(2) ul {
+	display: flex;
+	flex-direction: row;
+	gap: .5em;
+}
+
+.home section:nth-of-type(2) > article:nth-of-type(2) ul button {
+	padding: .3em;
+	border-radius: 30px;
+	border-color: #000000;
+	background-color: #000000;
+}
+
+.home section:nth-of-type(2) li {
+	list-style-type: none;
+}
+
+.home section:nth-of-type(2) a {
+	color: #000000;
+}
+
+/*Article 1: Gift Guide Ferrari*/
+.home article:nth-of-type(1) {
+	position: relative;
+}
+
+.home article:nth-of-type(1) div {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 1em;
+}
+.home article:nth-of-type(1) img {
+	width: 100%;
+}
+
+.home > article:nth-of-type(1) h2 {
+	font-size: 1em;
+}
+
+.home > article:nth-of-type(1) p {
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+.home article:nth-of-type(1) a {
+	align-self: center;
+}
+
+
+/*Article 2: Live your dream*/
+.home article:nth-of-type(2) {
+	position: relative;
+}
+
+.home article:nth-of-type(2) div {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 1em;
+}
+.home article:nth-of-type(2) img {
+	width: 100%;
+}
+
+.home > article:nth-of-type(2) h2 {
+	font-size: 1em;
+}
+
+.home > article:nth-of-type(2) p {
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+/*Article 3: Ferrari F80*/
+.home article:nth-of-type(3) {
+	position: relative;
+}
+
+.home article:nth-of-type(3) div {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 1em;
+}
+.home article:nth-of-type(3) img {
+	width: 100%;
+}
+
+.home > article:nth-of-type(3) h2 {
+	font-size: 1em;
+}
+
+.home > article:nth-of-type(3) p {
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+/*Article 4: Celebrate the GTO*/
+.home article:nth-of-type(4) {
+	position: relative;
+}
+
+.home article:nth-of-type(4) div {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 1em;
+}
+
+.home article:nth-of-type(4) img {
+	width: 100%;
+}
+
+.home > article:nth-of-type(4) h2 {
+	font-size: 1em;
+}
+
+.home > article:nth-of-type(4) p {
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+/*Article 5: Pre-owned*/
+.home article:nth-of-type(5) {
+	position: relative;
+}
+
+.home article:nth-of-type(5) div {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 1em;
+}
+.home article:nth-of-type(5) img {
+	width: 100%;
+}
+
+.home > article:nth-of-type(5) h2 {
+	font-size: 1em;
+}
+
+.home > article:nth-of-type(5) p {
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+/*Article 6: Past models*/
+.home article:nth-of-type(6) {
+	position: relative;
+}
+
+.home article:nth-of-type(6) div {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 1em;
+}
+.home article:nth-of-type(6) img {
+	width: 100%;
+}
+
+.home > article:nth-of-type(6) h2 {
+	font-size: 1em;
+}
+
+.home > article:nth-of-type(6) p {
+	font-size: 1.6em;
+	font-weight: bold;
+}
+ 
+/*/*hier heb ik chatGPT bij gebruikt als hulp*/
+.home .scroll { /*----->>>>>> Dit moet in theorie werken, maar hij doet het niet, hij laat alleen de animatie zien bij het erladen van de pagina. Ik weet niet waarom*/
+	position: absolute;
+	top: 50%;
+	left: -100%;
+	transform: translateY(-50%);
+	animation-name: slide-in;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+
+	/*scroll-timeline: scroll-animation; */
+	/*scroll-timeline-axis: block; */
+}
+
+@keyframes slide-in {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+body {
+	scroll-timeline-name: slide-in;
+	scroll-timeline-axis: block; 
+	animation-range-start: 0px; 
+	animation-range-end: 100%; 
+}
+
+:root:has(.scroll:hover) .scroll {
+	animation-play-state: running;
+}
+
+/* DETAIL PAGINA*/ 
+.detail {
+	background-color: #000000;
+}
+
+.detail span {
+	display: inline-block;
+	width: 3em;
+	height: 0.1em;
+	background: #DA291C;
+}
+
+.detail h3 span {
+	display: inline-block;
+	width: 5em;
+	height: 0.1em;
+	background: #DA291C;
+}
+
+/*Blockquote 1*/
+.detail blockquote:nth-of-type(1) {
+	display: flex;
+	text-align: center;
+	padding: 4em 0;
+	margin: 1em;
+	font-size: 1.1em;
+}
+
+/*Section 3: History*/
+.detail section:nth-of-type(3) {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.detail section:nth-of-type(3) h2 {
+	color: #DA291C;
+	margin: 1em;
+}
+
+.detail section:nth-of-type(3) button {
+	text-align: start;
+	border: none;
+	padding: 2em 4em;
+	margin: 0 1em;
+	color: #000000;
+	font-size: 1em;
+	font-weight: bold;
+	background-color: #FFFFFF;
+	width: 100%;
+	border-right: 3px solid #DA291C;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/*Section 4: Perfomance*/
+.detail section:nth-of-type(4) h2 {
+	color: #DA291C;
+	margin: 1em;
+}
+
+.detail section:nth-of-type(4) img {
+	padding: 1em;
+}
+
+.detail section:nth-of-type(4) article {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1em;
+	padding: 1em;
+}
+
+.detail section:nth-of-type(4) button {
+	border: none;
+	color: #000000;
+	background-color: #FFFFFF;
+	border-radius: 30px;
+	padding: 1em;
+	display: flex;
+	justify-content: center;
+}
+
+.detail section:nth-of-type(4) h3 {
+	font-size: 1.6em;
+	text-align: center;
+}
+
+.detail section:nth-of-type(4) p {
+	text-align: center;
+}
+
+/*Section 5: Design*/
+.detail section:nth-of-type(5) h2 {
+	color: #DA291C;
+	margin: 1em;
+}
+
+.detail section:nth-of-type(5) img {
+	padding: 1em;
+}
+
+.detail section:nth-of-type(5) article {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1em;
+	padding: 1em;
+}
+
+.detail section:nth-of-type(5) button {
+	border: none;
+	color: #000000;
+	background-color: #FFFFFF;
+	border-radius: 30px;
+	padding: 1em;
+	display: flex;
+	justify-content: center;
+}
+
+.detail section:nth-of-type(5) h3 {
+	font-size: 1.6em;
+	text-align: center;
+}
+
+.detail section:nth-of-type(5) p {
+	text-align: center;
+}
+
+/*Section 6: Technology*/
+.detail section:nth-of-type(6) h2 {
+	color: #DA291C;
+	margin: 1em;
+}
+
+.detail section:nth-of-type(6) img {
+	padding: 1em;
+}
+
+.detail section:nth-of-type(6) article {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1em;
+	padding: 1em;
+}
+
+.detail section:nth-of-type(6) button {
+	border: none;
+	color: #000000;
+	background-color: #FFFFFF;
+	border-radius: 30px;
+	padding: 1em;
+	display: flex;
+	justify-content: center;
+}
+
+.detail section:nth-of-type(6) h3 {
+	font-size: 1.6em;
+	text-align: center;
+}
+
+.detail section:nth-of-type(6) p {
+	text-align: center;
+}
+
+/*Section 7: Technical details*/
+.detail section:nth-of-type(7) h2 {
+	color: #DA291C;
+	margin: 1em;
+}
+
+.detail section:nth-of-type(7) img {
+	padding: 1em;
+}
+
+.detail section:nth-of-type(7) ul {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	list-style-type: none;
+	padding: 0;	
+	margin: 1em;
+}
+
+.detail section:nth-of-type(7) ul h3 {
+	font-size: 2em;
+}
+
+/*Section 8: Hamburger menu*/
+.detail section:nth-of-type(8) {
+	background-color: #303030;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 1em;
+}
+
+.detail section:nth-of-type(8) > button {
+	margin: .5em;
+	border-radius: 30px;
+	background-color: #303030;
+	border: none;
+}
+
+.detail section:nth-of-type(8) div {
+	display: flex;
+	flex-direction: column;
+}
+
+.detail section:nth-of-type(8) div > button {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+	margin: 1em 0 0 0;
+	background-color: #303030;
+	color: #FFFFFF;
+	border: none;
+}
+
+.detail section:nth-of-type(8) div span {
+	display: inline-block;
+	width: 22em;
+	background: #FFFFFF;
+}
+
+.detail section:nth-of-type(8) div p {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+/*Blockqoute 2*/
+.detail blockquote:nth-of-type(2) {
+	display: flex;
+	text-align: center;
+	padding: 4em 0;
+	margin: 1em;
+	font-size: 1.1em;
+}
+
+/*Section 9: Media gallery*/
+.detail section:nth-of-type(9) h2 {
+	color: #DA291C;
+	margin: 1em;
+}
+
+.detail section:nth-of-type(9) h3 {
+	color: #DA291C;
+	margin: 1em;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.detail section:nth-of-type(9) img {
+	padding: 1em;
+}
+
+.detail section:nth-of-type(9) p {
+	position: absolute;
+	bottom: 2em;
+	left: 2em;
+}
+
+.detail section:nth-of-type(9) button {
+	border-color: #FFFFFF;
+	background-color: #000000;
+	border-radius: 30px;
+	padding: .5em;
+	margin: 0 0 .5em 0;
+}
+
+.detail section:nth-of-type(9) ul {
+	display: flex;
+	justify-content: center;
+	gap: 1em;
+}
+
+.detail section:nth-of-type(9) li {
+	list-style-type: none;
+}
+
+/*/*Section 9: animatie*/
+/*/*hier heb ik chatGPT bij gebruikt als hulp*/
+@keyframes gallery-animatie {
+	0% {
+		transform: scale(.5);
+	}
+	100% {
+		transform: scale(1);
+		background-color: #FFFFFF;
+	}
+}
+
+li[aria-label="animatie gallerij"]:hover button {
+	animation-name: gallery-animatie;
+	animation-duration: .5s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+/*Article 1: Ferrari GTO*/
+.detail article:nth-of-type(1) {
+	position: relative;
+}
+
+.detail article:nth-of-type(1) div {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 1em;
+}
+
+.detail > article:nth-of-type(1) h2 {
+	font-size: 1em;
+}
+
+.detail > article:nth-of-type(1) p {
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+.detail > article:nth-of-type(1) img {
+	width: 100%;
+}
+
+/*Article 2: Ferrari F50*/
+.detail article:nth-of-type(2) {
+	position: relative;
+}
+
+.detail article:nth-of-type(2) div {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 1em;
+}
+
+.detail > article:nth-of-type(2) h2 {
+	font-size: 1em;
+}
+
+.detail > article:nth-of-type(2) p {
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+.detail > article:nth-of-type(2) img {
+	width: 100%;
+}
+
+/* FOOTER */
+/**********/
+
+footer {
+	background-color: #181818;
+	color: #FFFFFF;
+}
+
+/*section footer*/
+footer section {
+	background-color: #303030;
+	display: flex; 
+	flex-direction: column;
+	padding: 2em 1em;
+}
+
+footer section h2 {
+	align-self: center;
+	padding: 1em;
+}
+
+footer section p {
+	align-self: center;
+	text-align: center;
+	padding: .5em;
+}
+
+footer section button {
+	align-self: stretch;
+	padding: 1.5em;
+	background-color: #DC3326; 
+	border: none; 
+	margin: 1em 1em 1.5em 1em;
+	color: #FFFFFF;
+}
+
+/*Div 1: Hamburger menu 1*/
+footer > div:nth-of-type(1) {
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--color-background-1);
+}
+
+footer div:nth-of-type(1) button {
+	background-color: var(--color-background-1);
+	color: var(--color-text-1);
+	border: none;
+	margin: 1em;
+	display: flex;
+	justify-content: space-between;
+}
+
+/*Div 2: Hamburger menu 2*/
+footer > div:nth-of-type(2) {
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--color-background-1);
+}
+
+footer div:nth-of-type(2) button {
+	background-color: var(--color-background-1); 
+	color: var(--color-text-1);
+	border: none;
+	margin: 1em;
+	display: flex;
+	justify-content: space-between;
+}
+
+footer div:nth-of-type(2) button div {
+	display: flex;
+	gap: 1em;
+	align-items: center;
+}
+
+/*Div 3: Paraghaphs*/
+footer div:nth-of-type(3) { 
+	color: var(--color-text-3); 
+	background-color: var(--color-background-1);
+	text-align: center;
+	font-size: .4em;
+	padding: 4em;
+}
+
+footer div:nth-of-type(3) p {
+	padding: 1em;
+}
+
+/*Div 4: Ul list*/
+footer div:nth-of-type(4) { 
+	background-color: #303030;
+	padding: 1em;
+}
+
+footer div:nth-of-type(4) a {
+	display: flex;
+	justify-content: center;
+	font-size: .75em;
+}
+
+footer div:nth-of-type(4) nav ul {
+	display: flex;
+	list-style: none;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 1em;
+}
+
+footer div:nth-of-type(4) nav li {
+	padding: 1em;
+	text-align: center;
+	font-size: .6em;
+}
+
+/*Div 5: afbeelding*/
+footer div:nth-of-type(5) {
+	display: flex;
+	justify-content: center;
+	padding: .5em;
+	background-color: var(--color-background-1);
+}
+
+footer div:nth-of-type(5) img {
+	max-height: 1.75em;
+	margin: 0 .6em;
+}
+
